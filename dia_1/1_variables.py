@@ -1,5 +1,5 @@
 # Tipos de datos de variables primitivas
-# String 
+# String
 nombre = "Farit o'Conner"
 direccion = 'Las Lechuzas "512'
 # Cuando queremos guardar un texto muy largo que ademas puede tener saltos de linea
@@ -26,4 +26,7 @@ edad = 32
 # Boolean
 casado = True
 # Float
-estatura=1.82
+estatura = 1.82
+
+print(otro_enunciado)
+print(100)
