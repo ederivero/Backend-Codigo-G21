@@ -103,3 +103,47 @@ persona = {
     'viudo': False,
     'familiares': ('Juanito Perez', 'Maria Aguilar', 'Roxana Washington')
 }
+
+print(persona['nombre'])
+
+# Quiero ver los hobbies de la persona
+print(persona['hobbies'])
+
+# Quiero ver cuantos hobbies tiene la persona (numeros)
+print(len(persona['hobbies']))
+
+# Quiero ver en que calle vive la persona
+print(persona['direcciones']['calle'])
+
+# Quiero saber si es viudo o no
+print(persona['viudo'])
+print(persona.get('viudo'))
+
+# Quiero saber si Maria Washington es su familiar o no
+print('Maria Washington' in persona['familiares'])
+
+
+curso = {
+    'nombre': 'Backend',
+    'duracion': '10 semanas',
+    'fecha_inicio': '2024-11-11',
+    'fecha_fin': '2025-01-30',
+    'topics': ['Python', 'Express', 'Django', 'Flask'],
+    'semanas': [
+        {
+            'nombre': 'semana 01',
+            'descripcion': 'intro a python'
+        },
+        {
+            'nombre': 'semana 02',
+            'descripcion': 'base de datos'
+        }
+    ],
+    'habilidades': ('logica de programacion', 'manejo de eventos', 'despliegue en servidores'),
+    'finalizado': False,
+    'profesores': {
+        'Arnold Gallegos', 'Eduardo de Rivero'
+    },
+    'costo': 550.76,
+    'descanso': 'a veces'
+}
