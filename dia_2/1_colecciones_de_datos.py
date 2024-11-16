@@ -147,3 +147,25 @@ curso = {
     'costo': 550.76,
     'descanso': 'a veces'
 }
+
+
+# El nombre del curso y su duracion
+print(curso['nombre'], curso['duracion'])
+
+# Cuantos topics tiene el curso
+print(len(curso['topics']))
+
+# Muestrame los 2 primeros topics
+print(curso['topics'][:2])
+
+# Cuantas semanas tiene el curso
+print(len(curso['semanas']))
+
+# la descripcion de la semana01
+print(curso['semanas'][0]['descripcion'])
+
+# 'manejo de eventos' es parte de las habilidades?
+print('manejo de eventos' in curso['habilidades'])
+
+# Enseñara el profesor "Juan Martinez"?
+print('Juan Martinez' in curso['profesores'])
