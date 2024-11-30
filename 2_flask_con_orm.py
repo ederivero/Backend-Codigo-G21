@@ -82,8 +82,23 @@ def gestion_productos():
         productos = conexion.session.query(ProductoModel).all()
 
         print(productos)
+        print(productos[0].id)
+        resultado = []
+        # convertir la informacion de la lista de instancias a diccionario
+        for producto in productos:
+            producto_dict = {
+                'id': producto.id,
+                'nombre': producto.nombre,
+                'precio': producto.precio,
+                'serie': producto.serie,
+                'disponible': producto.disponible,
+                'fechaVencimiento': producto.fechaVencimiento
+            }
+            resultado.append(producto_dict)
+
         return {
-            'message': 'Los productos son'
+            'message': 'Los productos son',
+            'content': resultado
         }
 
 
