@@ -2,17 +2,20 @@ from flask import Flask
 from instancias import conexion
 from os import environ
 from dotenv import load_dotenv
+from flask_migrate import Migrate
+from models import *
 
 # revisara si hay algun archivo llamado .env y leera las variables definidas en el y las colocara como variables de entorno
 load_dotenv()
 
 app = Flask(__name__)
 # Si vamos a tener mas de una conexion a diferente base de datos, entonces debemos utilizar la variable SQLALCHEMY_BINDS
-# app.config['SQLALCHEMY_DATABASE_URI'] = ''
-print(environ.get('DATABASE_URL'))
+# Tengo que definir una conexion por defecto
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
+
+# si luego quiero agregar mas conexiones entonces las declarare en SQLALCHEMY_BINDS PERO aca ya no va la conexion por defecto
 app.config['SQLALCHEMY_BINDS'] = {
-    'postgres': environ.get('DATABASE_URL'),
-    # 'mysql': ''
+    'postgres': environ.get('DATABASE_URL2')
 }
 
 
@@ -22,6 +25,8 @@ conexion.init_app(app)
 # class UsuarioPostgresModel(conexion.Model):
 #     __bind_key__='postgres'
 #     id = Column(type_=types.Integer)
+
+Migrate(app, conexion)
 
 if __name__ == '__main__':
     app.run(debug=True)
