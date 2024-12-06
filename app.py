@@ -34,6 +34,8 @@ Migrate(app, conexion)
 
 # Declaracion de rutas
 api.add_resource(CategoriaController, '/categorias')
+api.add_resource(ManejoCategoriaController, '/categoria/<id>')
+api.add_resource(ProductosController, '/productos')
 
 if __name__ == '__main__':
     app.run(debug=True)
