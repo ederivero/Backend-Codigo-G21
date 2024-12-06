@@ -1,0 +1,1 @@
+from .categoria_serializer import CategoriaSerializer
