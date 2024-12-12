@@ -1,3 +1,4 @@
 SHOW DATABASES;         > Muestra todas las bases de datos que tengamos en nuestro servidor
 USE database_name;      > Usaremos esa base de datos en la terminal
 SELECT DATABASE();      > Mostrara la base de datos que estoy utilizando actualmente
+SHOW TABLES;            > Mostrara todas las tablas en la bd

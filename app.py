@@ -2,6 +2,8 @@ from flask import Flask
 from instancias import conexion
 from os import environ
 from dotenv import load_dotenv
+from flask_migrate import Migrate
+from models import *
 
 load_dotenv()
 
@@ -15,6 +17,9 @@ app.config['SQLALCHEMY_BINDS'] = {
 }
 
 conexion.init_app(app)
+
+Migrate(app, conexion)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
