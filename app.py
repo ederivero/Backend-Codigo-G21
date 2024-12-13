@@ -4,6 +4,8 @@ from os import environ
 from dotenv import load_dotenv
 from flask_migrate import Migrate
 from models import *
+from controllers import *
+from flask_restful import Api
 
 load_dotenv()
 
@@ -20,6 +22,10 @@ conexion.init_app(app)
 
 Migrate(app, conexion)
 
+api = Api(app)
+
+api.add_resource(CategoriasController, '/categorias')
+api.add_resource(RegistroController, '/registro')
 
 if __name__ == '__main__':
     app.run(debug=True)
