@@ -1,2 +1,2 @@
 from .categoria import CategoriaSerializer
-from .usuario_serializer import RegistroSerializer
+from .usuario_serializer import RegistroSerializer, LoginSerializer

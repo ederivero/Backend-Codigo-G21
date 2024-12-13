@@ -26,6 +26,7 @@ api = Api(app)
 
 api.add_resource(CategoriasController, '/categorias')
 api.add_resource(RegistroController, '/registro')
+api.add_resource(LoginController, '/login')
 
 if __name__ == '__main__':
     app.run(debug=True)
