@@ -117,6 +117,7 @@ class UsuarioController(Resource):
         serializador = ActualizarUsuarioSerializer()
         try:
             data_serializada = serializador.load(request.get_json())
+            # Si el valor es un string vacio no modificara la informacion, asi lo maneja python e ingresaremos al else
             usuario_encontrado.nombre = data_serializada.get(
                 'nombre') if data_serializada.get('nombre') else usuario_encontrado.nombre
 
