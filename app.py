@@ -37,6 +37,7 @@ api.add_resource(RegistroController, '/registro')
 api.add_resource(LoginController, '/login')
 api.add_resource(UsuarioController, '/usuario')
 api.add_resource(CategoriaController, '/categoria/<int:id>')
+api.add_resource(OlvidePasswordController, '/forgot-password')
 
 if __name__ == '__main__':
     app.run(debug=True)
