@@ -36,6 +36,7 @@ api.add_resource(CategoriasController, '/categorias')
 api.add_resource(RegistroController, '/registro')
 api.add_resource(LoginController, '/login')
 api.add_resource(UsuarioController, '/usuario')
+api.add_resource(CategoriaController, '/categoria/<int:id>')
 
 if __name__ == '__main__':
     app.run(debug=True)

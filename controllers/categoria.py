@@ -4,6 +4,7 @@ from models import Categoria
 from .serializers import CategoriaSerializer
 from marshmallow.exceptions import ValidationError
 from flask_jwt_extended import jwt_required
+from decoradores import validar_usuario_admin
 
 
 class CategoriasController(Resource):
@@ -11,6 +12,7 @@ class CategoriasController(Resource):
     serializador = CategoriaSerializer()
 
     @jwt_required()
+    @validar_usuario_admin
     def post(self):
         # validamos que el usuario sea admin para poder crear la categoria
         # ...
@@ -41,4 +43,23 @@ class CategoriasController(Resource):
 
         return {
             'content': self.serializador.dump(categorias, many=True)
+        }
+
+
+class CategoriaController(Resource):
+    def get(self, id):
+        categoria_encontrada = conexion.session.query(
+            Categoria).filter(Categoria.id == id).first()
+
+        if categoria_encontrada is None:
+            return {
+                'message': 'Categoria no existe'
+            }
+
+        print(categoria_encontrada.libros)
+        serializador = CategoriaSerializer()
+        resultado = serializador.dump(categoria_encontrada)
+
+        return {
+            'content': resultado
         }
