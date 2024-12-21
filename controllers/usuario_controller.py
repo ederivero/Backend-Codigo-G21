@@ -174,10 +174,12 @@ class OlvidePasswordController(Resource):
 
             token = encriptador.encrypt(
                 bytes(str(mensaje), 'utf-8'))
-            print(token)
+
+            url = f'http://127.0.0.1:5500/frontend/reset-password/?token={
+                token.decode('utf-8')}'
 
             enviar_email(
-                usuario_encontrado[1], 'Restauración de la contraseña', token.decode('utf-8'))
+                usuario_encontrado[1], 'Restauración de la contraseña', url)
 
             return {
                 'message': 'Correo enviado con las indicaciones'
