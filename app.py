@@ -87,7 +87,7 @@ def resetPassword():
             data_serializada.get('token')).decode('utf-8')
 
         informacion_diccionario = loads(informacion.replace("'", '"'))
-        print(informacion_diccionario)
+
         usuario_id = informacion_diccionario.get('usuario_id')
         usuario_encontrado = conexion.session.query(
             Usuario).filter(Usuario.id == usuario_id).first()
