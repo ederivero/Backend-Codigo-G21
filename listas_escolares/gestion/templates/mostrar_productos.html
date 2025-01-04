@@ -3,26 +3,34 @@
 {# Ahora podemos utilizar sus blocks de esa plantilla base #}
 {% block titulo_pagina %}Mostrar Productos {% endblock %}
 {% block contenido %}
-<p>{{ mensaje }}</p>
-<br />
-<p>Los productos disponibles son:</p>
-<table border="1">
-  <thead>
-    <tr>
-      <td>ID</td>
-      <td>nombre</td>
-      <td>descripcion</td>
-    </tr>
-  </thead>
-  <tbody>
-    {% for producto in data %}
-    <tr>
-      <td>{{ producto.id }}</td>
-      <td>{{ producto.nombre }}</td>
-      <td>{{ producto.descripcion }}</td>
-    </tr>
+{# Si queremos agregar una hoja de estilos/js en nuestro html tenemos que usar la referencia #}
+{# https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#static #}
+{% load static %}
+<link rel="stylesheet" href="{% static 'estilos_mostrar_productos.css' %}">
+<div class="container">
+
+  <p>{{ mensaje }}</p>
+  <br />
+  <p>Los productos disponibles son:</p>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Descripcion</td>
+        <td>Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in data %}
+      <tr>
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.descripcion }}</td>
+      </tr>
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% endblock %}
 
