@@ -2,6 +2,8 @@ django-admin startproject NOMBRE_PROYECTO   > crea un nuevo proyecto de django
 
 py manage.py runserver                      > levanta el servidor de nuestro proyecto de django
 
+py manage.py startapp NOMBRE_APP            > crea una aplicacion dentro del proyecto de django
+
 py manage.py makemigrations NOMBRE_APP --name NOMBRE_MIGRACION  > crea una nueva migracion con los cambios realizados en los modelos
 
 py manage.py migrate                        > ejecuta todas las migraciones faltantes de la bd

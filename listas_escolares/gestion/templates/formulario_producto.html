@@ -1,0 +1,25 @@
+{# Para reutilizar una plantilla dentro de otra usamos la etiqueta extends #}
+{% extends 'base.html' %}
+{# Ahora podemos utilizar sus blocks de esa plantilla base #}
+{% block titulo_pagina %}Ingresar un nuevo producto {% endblock %}
+{% block contenido %}
+<div class="container p-3">
+    <h1>Formulario para la creacion de nuevos productos</h1>
+    <form method="POST">
+        {# Cuando nosotros queremos utilizar un formulario en django con plantillas tenemos que enviar la token csrf #}
+        {# Cross-Site Request Forgery es una token que sirve para prevenir ataques que engañen al usuario con suplantacion de identidad #}
+        {% csrf_token %}
+        <label for="nombreProducto" class="form-label">Nombre</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" >
+        </div>
+        <div class="mb-3">
+            <label for="descripcionProducto" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcionProducto" name="descripcionProducto">
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success">Crear Producto</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

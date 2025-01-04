@@ -1,0 +1,28 @@
+{# Para reutilizar una plantilla dentro de otra usamos la etiqueta extends #}
+{% extends 'base.html' %}
+{# Ahora podemos utilizar sus blocks de esa plantilla base #}
+{% block titulo_pagina %}Mostrar Productos {% endblock %}
+{% block contenido %}
+<p>{{ mensaje }}</p>
+<br />
+<p>Los productos disponibles son:</p>
+<table border="1">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>nombre</td>
+      <td>descripcion</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for producto in data %}
+    <tr>
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
