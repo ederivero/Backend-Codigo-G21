@@ -1,0 +1,26 @@
+{
+  "name": "express_con_prisma",
+  "version": "1.0.0",
+  "description": "Proyecto de express usando prisma con arquitectura modelo-controlador",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev":"nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "prisma",
+    "backend"
+  ],
+  "author": "Eduardo de Rivero",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.2.1"
+  }
+}
