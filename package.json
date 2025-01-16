@@ -1,0 +1,32 @@
+{
+  "name": "fixture_liga1",
+  "version": "1.0.0",
+  "description": "Proyecto del backend para mostrar los partidos de la liga 1",
+  "main": "index.js",
+  "keywords": [],
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js",
+    "dev": "nodemon --env-file=.env src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ederivero/Backend-Codigo-G21.git"
+  },
+  "author": "Eduardo de Rivero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ederivero/Backend-Codigo-G21/issues"
+  },
+  "homepage": "https://github.com/ederivero/Backend-Codigo-G21#readme",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.2.1"
+  }
+}
