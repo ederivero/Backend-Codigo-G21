@@ -35,6 +35,32 @@ servidor.post("/registro", async (req, res) => {
   }
 });
 
+// Si una ruta va a tener mas de un verbo http entonces se recomienda encapsularlas mediante el metodo route
+servidor
+  .route("/notas")
+  .post(async (req, res) => {
+    const data = req.body;
+    try {
+      const notaCreada = await conexion.nota.create({ data });
+
+      return res.json({
+        message: "Nota creada exitosamente",
+        content: notaCreada,
+      });
+    } catch (error) {
+      return res.json({
+        message: "Error al crear la nota",
+      });
+    }
+  })
+  .get(async (req, res) => {
+    const notas = await conexion.nota.findMany();
+
+    return res.json({
+      content: notas,
+    });
+  });
+
 servidor.listen(process.env.PORT, () => {
   console.log(
     `Servidor corriendo exitosamente en el puerto ${process.env.PORT}`
