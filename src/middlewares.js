@@ -1,5 +1,6 @@
 import JWT from "jsonwebtoken";
 import { conexion } from "./conexion.js";
+import { TipoUsuario } from "@prisma/client";
 
 export const validarUsuario = async (req, res, next) => {
   // Si la informacion luego de validarla cumple con todo, entonces dejaremos pasar al siguien controlador con la funcion next
@@ -32,4 +33,15 @@ export const validarUsuario = async (req, res, next) => {
   // Dentro del req (request) podemos agregar informacion
   req.user = usuarioEncontrado;
   next();
+};
+
+export const validarAdmin = async (req, res, next) => {
+  // req.user
+  if (req.user.tipoUsuario === TipoUsuario.ADMIN) {
+    next();
+  } else {
+    return res.json({
+      message: `El usuario tiene que ser ${TipoUsuario.ADMIN} para realizar esta accion`,
+    });
+  }
 };

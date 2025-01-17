@@ -95,3 +95,9 @@ export const actualizarUsuario = async (req, res) => {
     content: usuarioActualizado,
   });
 };
+
+export const devolverUsuario = async (req, res) => {
+  return res.json({
+    content: req.user,
+  });
+};

@@ -1,13 +1,19 @@
 import express from "express";
 import { usuarioEnrutador } from "./routes/usuario.routes.js";
+import { equipoEnrutador } from "./routes/equipo.routes.js";
 import { ZodError } from "zod";
 import { Prisma } from "@prisma/client";
+import cors from "cors";
 
 const servidor = express();
+// CORS para poder permitir peticiones a mi backend
+servidor.use(cors({ origin: ["http://127.0.0.1:5500"] }));
+
 servidor.use(express.json());
 
 // Agregamos las rutas de nuestros enrutadores
 servidor.use(usuarioEnrutador);
+servidor.use(equipoEnrutador);
 
 servidor.use((error, req, res, next) => {
   // Aca manejaremos los errores que podamos tener en toda nuestra aplicacion

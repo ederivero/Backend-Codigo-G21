@@ -3,6 +3,7 @@ import {
   registrarUsuario,
   login,
   actualizarUsuario,
+  devolverUsuario,
 } from "../controllers/usuario.controller.js";
 import asyncHandler from "express-async-handler";
 import { validarUsuario } from "../middlewares.js";
@@ -17,4 +18,9 @@ usuarioEnrutador.put(
   "/actualizar-usuario",
   asyncHandler(validarUsuario),
   asyncHandler(actualizarUsuario)
+);
+usuarioEnrutador.get(
+  "/usuario",
+  asyncHandler(validarUsuario),
+  asyncHandler(devolverUsuario)
 );
