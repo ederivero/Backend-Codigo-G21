@@ -4,6 +4,16 @@ import { equipoEnrutador } from "./routes/equipo.routes.js";
 import { ZodError } from "zod";
 import { Prisma } from "@prisma/client";
 import cors from "cors";
+import AWS from "aws-sdk";
+
+// Creamos la conexion a nuestro s3 bucket
+new AWS.S3({
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  },
+  region: process.env.BUCKET_REGION,
+});
 
 const servidor = express();
 // CORS para poder permitir peticiones a mi backend

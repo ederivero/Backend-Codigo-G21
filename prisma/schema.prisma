@@ -43,7 +43,7 @@ model Imagen {
 
 model Equipo {
   id        Int      @id @default(autoincrement())
-  nombre    String
+  nombre    String   @unique
   estadio   String?
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
