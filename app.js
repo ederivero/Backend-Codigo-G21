@@ -4,7 +4,13 @@ import pg from "pg";
 const app = express();
 app.use(express.json());
 
-const conexion = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const conexion = new pg.Pool({
+  host: process.env.RDS_HOSTNAME,
+  port: process.env.RDS_PORT,
+  database: process.env.RDS_DB_NAME,
+  user: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+});
 
 app
   .route("/productos")
