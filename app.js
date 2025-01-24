@@ -1,7 +1,7 @@
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const express = require("express");
 const pg = require("pg");
-import cors from "cors";
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(
   cors({
     methods: ["GET", "POST"], // '*'
-    origin: ["http://mifrontend.com", "http://localhost:8080"], // '*'
+    origin: "*", //["http://mifrontend.com", "http://localhost:8080"], // '*'
     allowedHeaders: ["Authorization", "Content-Type", "Accept"], // '*'
   })
 );
