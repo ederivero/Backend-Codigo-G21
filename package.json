@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Proyecto simple usando base de datos con express para deployear en aws",
   "main": "app.js",
-  "type": "module",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "dev": "nodemon --env-file=.env app.js"
   },
   "repository": {
@@ -19,10 +18,12 @@
   },
   "homepage": "https://github.com/ederivero/Backend-Codigo-G21#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "pg": "^8.13.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/pg": "^8.11.10",
     "nodemon": "^3.1.9"
