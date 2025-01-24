@@ -25,6 +25,7 @@ crear.addEventListener("click", (e) => {
     }),
     headers: {
       "Content-Type": "application/json",
+      // Authorization: "Bearer asdjalskdja.asdjakdjaksd.jaksdjaksd",
     },
   })
     .then((r) => r.json())
