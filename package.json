@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "proyecto con node usando bd de mongo",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon --env-file=.env src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/ederivero/Backend-Codigo-G21/issues"
   },
-  "homepage": "https://github.com/ederivero/Backend-Codigo-G21#readme"
+  "homepage": "https://github.com/ederivero/Backend-Codigo-G21#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.96",
+    "nodemon": "^3.1.9"
+  }
 }
