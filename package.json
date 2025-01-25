@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-node-mongo",
+  "version": "1.0.0",
+  "description": "proyecto con node usando bd de mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ederivero/Backend-Codigo-G21.git"
+  },
+  "author": "eduardo de rivero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ederivero/Backend-Codigo-G21/issues"
+  },
+  "homepage": "https://github.com/ederivero/Backend-Codigo-G21#readme"
+}
