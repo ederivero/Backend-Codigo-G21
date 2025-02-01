@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  backend:
+    # build sirve para indicar cual sera el directorio que usara para construir este contenedor 
+    build: .
+    ports:
+      # CONTENEDOR:ALOJADO
+      - 3000:3000
+    links:
+      # Sirve para relacionar dos o mas contenedores dentro del proyecto
+      - bd
+  
+  bd:
+    image: mongo
+    ports:
+      - 27018:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=usuario
+      - MONGO_INITDB_ROOT_PASSWORD=password
